@@ -16,7 +16,8 @@ import Product from "./models/Product.js"
 import ProductStat from "./models/ProductStat.js"
 import Transaction from "./models/Transaction.js"
 import OverallStat from './models/OverallStat.js';
-import {dataUser,dataProduct,dataProductStat,dataTransaction,dataOverallStat} from "./data/index.js"
+import AffiliateStat from './models/AffiliateStat.js';
+import {dataUser,dataProduct,dataProductStat,dataTransaction,dataOverallStat,dataAffiliateStat} from "./data/index.js"
 
 
 // configuration
@@ -41,6 +42,7 @@ const PORT = process.env.PORT || 9000;
 mongoose.connect(process.env.MONGO_URL).then(()=>{
     app.listen(PORT,()=>console.log(`Server Port:${PORT}`))
     // OverallStat.insertMany(dataOverallStat)
+    // AffiliateStat.insertMany(dataAffiliateStat)
     // Product.insertMany(dataProduct);
     // ProductStat.insertMany(dataProductStat);
     // User.insertMany(dataUser)

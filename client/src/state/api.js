@@ -10,7 +10,9 @@ export const api = createApi({
     "Transactions",
     "Geography",
     "Sales",
-    "Admins"
+    "Admins",
+    "Performance",
+    "Dashboard"
   ],
   endpoints: (build) => ({
     getUser: build.query({
@@ -44,7 +46,16 @@ export const api = createApi({
     getAdmins:build.query({
       query:()=> "management/admins",
       providesTags:["Admins"]
+    }),
+    getPerformance:build.query({
+      query:(id)=> `management/performance/${id}`,
+      providesTags:["Performance"]
+    }),
+    getDashboard : build.query({
+      query:()=>"general/dashboard",
+      providesTags:["Dashboard"]
     })
+
   }),
 });
 
@@ -55,5 +66,7 @@ export const {
   useGetTransactionsQuery,
   useGetGeographyQuery,
   useGetSalesQuery,
-  useGetAdminsQuery
+  useGetAdminsQuery,
+  useGetPerformanceQuery,
+  useGetDashboardQuery
 } = api;
